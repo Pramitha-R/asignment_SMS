@@ -39,36 +39,22 @@ class BookContoller extends Controller
      */
     public function store(Request $request)
     {
-        $request ->validate([
+        $this ->validate($request,[
             'AppointmentId'=>'required',
             'staff'=>'required',
             'date'=>'required',
             'time'=>'required',
             'service'=>'required',
-            'serviceID'=>'required',
-            'staffID'=>'required',
+            
         ]);
-        $employee=Employee::where('id','=',$request->get('staffID'))->first();
-        $service=service::where('id','=',$request->get('serviceID'))->first();
-        if($employee !=null && $service !=null)
-        {
+       
             Book::create($request->all());
-            return back();
-        }
-       /* $book_data=DB::table('books')
-            ->join('employee', 'book.staffID', '=', 'employee.id')
-            ->join('employee','books.staffID','=','Employee.id')
-            ->where('book.staffID', '=', $employee)
-            ->join('service','books.serviceID','=','service.id')
-            ->select('book.*')
-            ->get();
+            return back();        
+    }
+    public function click_appointment(Customer $customer){
+        $book=Book::all();
+        return view('/Customer/appointment/show',compact('book','customer'));
 
-
-        if($book_data !=null){
-            Book::create($request->all());
-            return redirect()->back();
-        }*/
-        
     }
 
     /**

@@ -1,9 +1,17 @@
 @extends('admin/dashboard')
 @section('admin_dashboard')
 
+
+
 <div>
     <h2><a class="btn btn-primary" style="text-align:right ;" href="{{url('clickCreate')}}">Create Employee</a></h2>
 </div>
+    @if ($message = Session::get('success'))
+        <div class="alert alert-success">
+            <p>{{ $message }}</p>
+        </div>
+    @endif
+ 
 <table style="border: 1px solid;" >
         <tr >
             <th  style="border: 1px solid;">Emp ID</th>
@@ -21,7 +29,7 @@
             <td style="border: 1px solid;">{{ $emp->address }}</td>
             <td style="border: 1px solid;">{{$emp->mobile}}</td>
             <td ><a class="btn btn-info" href="{{url('edit',$emp->id)}}" style="background-color:green">edit</a></td>
-            <td ><a class="btn btn-info" href="" style="background-color:red">Delete</a></td>
+            <td ><a class="btn btn-info" href="{{url('destroy',$emp->id)}}" style="background-color:red">Delete</a></td>
         </tr>
         @endforeach
     </table>

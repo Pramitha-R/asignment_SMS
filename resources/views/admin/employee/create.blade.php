@@ -1,7 +1,7 @@
 @extends('admin/dashboard')
 @section('admin_dashboard')
 
-<form action="{{url('/store')}}" method="post">
+<form action="{{url('/storeEmployee')}}" method="post">
     @csrf
     <div class="mb-2 row">
         <label for="empId" class="col-sm-2 col-form-label"><b>Emp Id:</b></label>

@@ -14,7 +14,6 @@ class Book extends Model
         'date',
         'time',
         'service',
-        'serviceID',
-        'staffID',
+        
     ];
 }

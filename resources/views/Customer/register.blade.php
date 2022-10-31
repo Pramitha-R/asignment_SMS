@@ -6,7 +6,7 @@
         <h2 style="padding-left:flex;   background-color: blue;" class="card-header"  >Customer Registration</h2>
         <br>
         <div>
-            <form action="store" method="post">
+            <form action="storeCustomer" method="post">
                 {{csrf_field()}}
                 
                 <div class="mb-2 row">

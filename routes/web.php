@@ -24,21 +24,25 @@ Route::get('/AdminDash',[AdminController::class,'index']);
 
 Route::get('/create_employee',[EmployeeController::class,'create_employee']);
 Route::get('/clickCreate',[EmployeeController::class,'index']);
-Route::post('/store',[EmployeeController::class,'store']);
+Route::post('/storeEmployee',[EmployeeController::class,'store']);
 Route::get('/edit/{employee}',[EmployeeController::class,'edit']);
 Route::post('/update/{employee}',[EmployeeController::class,'update']);
+Route::get('/destroy/{emp}',[EmployeeController::class,'destroy']);
+
 
 Route::get('/service',[AdminController::class,'service']);
 Route::get('/addservice',[AdminController::class,'addservice']);
 Route::post('/storeService',[AdminController::class,'storeService']);
 Route::get('/edit/{service}',[AdminController::class,'edit']);
 Route::post('/update/{service}',[AdminController::class,'update']);
+Route::get('/destroyservice/{s}',[AdminController::class,'destroy']);
 
 Route::get('/logout',[AdminController::class,'logout']);
 
            
 Route::get('/register',[CustomerController::class,'index']);
-Route::post('/store',[CustomerController::class,'store']);
+Route::post('/storeCustomer',[CustomerController::class,'store']);
 Route::get('/bookappointment/{customer}',[CustomerController::class,'bookappointment']);
-Route::post('/store',[BookContoller::class,'store']);
+Route::post('/storebook',[BookContoller::class,'store']);
+Route::get('/click_appointment/{customer}',[BookContoller::class,'click_appointment']);
 

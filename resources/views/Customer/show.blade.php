@@ -6,7 +6,7 @@
                 <tr>
                     <th><a class="btn btn-primary" style="width:240px" href="" >{{$customer->fname}}</a></th>
                     <th><a class="btn btn-primary" style="width:240px"href="{{url('bookappointment',$customer->id)}}">Book Appointment</a></th>
-                    <th><a class="btn btn-primary" style="width:240px"  href="">Appointment</a></th>
+                    <th><a class="btn btn-primary" style="width:240px"  href="{{url('click_appointment',$customer->id)}}">Appointment</a></th>
                     <th><a class="btn btn-primary" style="width:240px" href="/logout">Logout</a></th>
                 </tr>            
             </table>

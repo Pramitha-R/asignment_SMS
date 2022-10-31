@@ -1,12 +1,12 @@
 @extends('Customer/show')
 @section('customer_dashboard')
 
-<form action="{{url('store')}}" method="post">
+<form action="{{url('storebook')}}" method="post">
     @csrf
     <div class="mb-2 row">
         <label for="" class="col-sm-2 col-form-label"><b>Appointment ID: </b></label>
         <div class="col-sm-10">
-            <input type="text" class="from-control" name="service"/>
+            <input type="text" class="from-control" name="AppointmentId"/>
         </div>
     </div>
 
@@ -15,9 +15,9 @@
         <div class="col-sm-10">
             <select name="staff"  class="col-sm-10" style="width:210px" aria-label="from-select-sm example">
             @foreach($employee as $emp)
-                <option class="from-control" name="staff" value="{{$emp->fname}}">{{$emp->fname}} </option>
-                
+                <option class="from-control" name="staff" value="{{$emp->id}}">{{$emp->fname}} </option>
             @endforeach
+            
             </select>    
         </div>
     </div>
@@ -39,9 +39,8 @@
         <label for="service" class="col-sm-2 col-form-label"><b>Service</b></label>
         <div class="col-sm-10">
             @foreach($service as $s)
-                <input type="checkbox"  name="service" value="{{$s->service}}">
+                <input type="checkbox"  name="service" value="{{$s->id}}">
                 <label for=""> {{$s->service}}</label><br>
-                <input type="hidden" name="{{$s->id}}" >
             @endforeach
         </div>
     </div>

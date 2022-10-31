@@ -20,8 +20,7 @@ return new class extends Migration
             $table->date('date');
             $table->time('time');
             $table->string('service');
-            $table->string('serviceID');
-            $table->string('staffID');
+
             $table->timestamps();
         });
     }
